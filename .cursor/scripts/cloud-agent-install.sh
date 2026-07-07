@@ -88,8 +88,8 @@ find_enterprise_checkout() {
 }
 
 verify_enterprise_checkout() {
-  if is_true "${CLOUD_AGENT_SKIP_ENTERPRISE:-false}"; then
-    log "Skipping enterprise verification because CLOUD_AGENT_SKIP_ENTERPRISE is set."
+  if is_true "${CLOUD_AGENT_SKIP_ENTERPRISE:-true}"; then
+    log "Skipping enterprise verification (enterprise repo dependency is not configured for this fork)."
     return 0
   fi
 
